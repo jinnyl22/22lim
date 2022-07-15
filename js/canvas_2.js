@@ -144,29 +144,29 @@ const playerSt2 = new Sprite({
 // console.log(player.width);
 
 
-const playerColSt1 = new Boundary({
+const playerColSt2 = new Boundary({
     position: {
         // 맵 가운데에 위치하게 고정
-        x: playerSt1.position.x + playerSt1.width / 4.8,
-        y: playerSt1.position.y + playerSt1.height / 1.8
+        x: playerSt2.position.x + playerSt2.width / 4.8,
+        y: playerSt2.position.y + playerSt2.height / 1.8
     },
     width : 30,
     height : 30
 });
 
-const playerRaycastSt1 = new Character({
+const playerRaycastSt2 = new Character({
     position: {
         // 맵 가운데에 위치하게 고정
-        x: playerColSt1.position.x,
-        y: playerColSt1.position.y  
+        x: playerColSt2.position.x,
+        y: playerColSt2.position.y  
     },
     raycast_direction : 'down'
 });
 
-const backgroundSt1 = new Sprite({
+const backgroundSt2 = new Sprite({
     position: {
-        x: offsetSt1.x,
-        y: offsetSt1.y
+        x: offsetSt2.x,
+        y: offsetSt2.y
     },
     image: image
 })
@@ -174,23 +174,23 @@ const backgroundSt1 = new Sprite({
 
 const foregroundSt1 = new Sprite({
     position: {
-        x: offsetSt1.x,
-        y: offsetSt1.y
+        x: offsetSt2.x,
+        y: offsetSt2.y
     },
     image: foregroundImage
 })
 
 const knifeSt1 = new Sprite({
     position:{
-        x: offsetSt1.x+790 *2.5,
-        y: offsetSt1.y+400 *2.5
+        x: offsetSt2.x+790 *2.5,
+        y: offsetSt2.y+400 *2.5
     },
     image: knifeImage1
 })
 const knifeSt2 = new Sprite({
     position:{
-        x: offsetSt1.x+769 *2.5,
-        y: offsetSt1.y+600 *2.5
+        x: offsetSt2.x+769 *2.5,
+        y: offsetSt2.y+600 *2.5
     },
     image: knifeImage2
 })
@@ -219,9 +219,9 @@ const keys = {
 
 
 // 방향키 움직일 때 같이 움직일 맵요소를 넣어준 곳
-const movablesSt1 = [
-    backgroundSt1, ...boundariesSt1,
-    foregroundSt1, knifeSt1 ,knifeSt2
+const movablesSt2 = [
+    backgroundSt2, ...boundariesSt2,
+    foregroundSt2, knifeSt2 ,knifeSt2
     , awlSt1
 ]
 
@@ -230,30 +230,30 @@ const movablesSt1 = [
 function attack(start) {
     if(start) {
     // 송곳을 여기서 그려준후 attack함수는 아래에 애니메이트 함수 내에서 실행한다
-    awlSt1.draw();
+    awlSt2.draw();
         // 키입력 못하는 변수를 true로 넣어주면 된다
         // 송곳의 frames은 1이고 애니메이트 함수가 실행되면서 1씩 올라간다
-        awlSt1.frames.elapsed++;
+        awlSt2.frames.elapsed++;
         // elapsed를 10으로 나눈 값에 따라 케이스가 달라진다
-        switch (awlSt1.frames.elapsed / 7) {
+        switch (awlSt2.frames.elapsed / 7) {
             // 0 / 10 은 0 이므로 case 0을 탄다
             case 0:
-                awlSt1.image =  awlSt1.Sprite.short;
+                awlSt1.image =  awlSt2.Sprite.short;
                 // 이 이미지를 기준 position으로 잡고
                 break;
 
             // 10 / 10은 1 이므로 case 1을 탄다
             case 1:
-                awlSt1.image =  awlSt1.Sprite.medium;
+                awlSt2.image =  awlSt2.Sprite.medium;
                 // short이미지의 height 길이만큼 position 값을 빼준다  
-                awlSt1.position.y -= 9;
+                awlSt2.position.y -= 9;
                 break;
 
             // 20 / 10은 2 이므로 case 2를 탄다
             case 2:
-                awlSt1.image =  awlSt1.Sprite.long;
+                awlSt2.image =  awlSt2.Sprite.long;
                 // short이미지의 height 길이 2배 만큼 position 값을 빼준다 
-                awlSt1.position.y -= 34;
+                awlSt2.position.y -= 34;
                 break;
                 // 케이스의 숫자를 올리면 속도를 느리게 할 수 있다
             case 4:{
@@ -286,7 +286,7 @@ function rectangularCollision({rectangle1, rectangle2}) {
 
 // 애니메이트 함수를 실행해줄 함수를 만들고
 function animateLoop(){
-    animate(backgroundSt1, foregroundSt1, boundariesSt1, playerSt1, playerColSt1, playerRaycastSt1, movablesSt1, knifeSt1,knifeSt2);
+    animate(backgroundSt2, foregroundSt2, boundariesSt2, playerSt2, playerColSt2, playerRaycastSt2, movablesSt2, knifeSt2,knifeSt2);
 };
 // 함수를 실행시키고 전달시켜준다
 animateLoop();
@@ -306,11 +306,11 @@ function animate(background, foreground, boundaries, player, playerCol, playerRa
         boundary.draw();
     })
 
-    stuffsMapSt1.forEach((stuff) => {
+    stuffsMapSt2.forEach((stuff) => {
         stuff.draw();
     })
 
-    portalsMapSt1.forEach((portal) => {
+    portalsMapSt2.forEach((portal) => {
         portal.draw();
     })
 //  ===============오브젝트 충돌체를 그려주는 함수 끝 ==================
