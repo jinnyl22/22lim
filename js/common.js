@@ -8,9 +8,8 @@ let isQuizeBox = false;
 let isPopupOpen = false;
 
 let inventory = new Inventory();
+
 let boardCnt = 0;
-let isSaveFileView = false;
-let isLoadFileView = false;
 
 let flyingKnife = false;
 let portalDead = false;
