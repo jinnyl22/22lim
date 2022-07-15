@@ -27,7 +27,11 @@ _main_button.onclick = function(){
 }
 // }======================================================================
 _loadfile_button.onclick = function(){
-    _setting_board.style.zIndex = 0;
+    settingBoardHidden();
+    loadFileView()
+    document.querySelectorAll('#container_box>div').forEach(el => {
+                    el.style.zIndex = "";
+                })
     _load_filed.style.zIndex = 999;
 }
 //======================================================================
@@ -42,6 +46,7 @@ _start_btn.onclick = function(){
             }
         });
         paragraph(prologText);
+        
         document.querySelectorAll('#container_box>div').forEach(el => {
             el.style.zIndex = "";
         })
@@ -51,16 +56,16 @@ _start_btn.onclick = function(){
     // 하위 인벤토리 창이 먼저 뜨고 거기에 엑스레이 필름을 누르면  상위 보드 뜨게 하기
 
 
-_load_btn.onclick = function(){
+// _load_btn.onclick = function(){
 
-        // document.querySelectorAll('#container_box>div').forEach(el => {
-        //     el.style.zIndex = "";
-        // })
+//         // document.querySelectorAll('#container_box>div').forEach(el => {
+//         //     el.style.zIndex = "";
+//         // })
 
-        _load_list.style.zIndex = 999;
-        mapState = "_load_list";
+//         _load_list.style.zIndex = 999;
+//         mapState = "_load_list";
         
-};
+// };
 
 //===============================================================
     
@@ -161,7 +166,7 @@ window.addEventListener(
             settingBoardView();
         }
         if(_load_filed.style.zIndex=="999"){
-            _load_filed.style.zIndex = 0 ;
+            loadFileHidden()
         }
     }
 

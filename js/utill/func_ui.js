@@ -111,3 +111,14 @@ function paragraph(element) {
 function chageMap(){
     
 }
+function loadFileView(){
+    isPopupOpen = true;
+    _load_filed.style.display = "flex";
+    isLoadFileView = true;
+}
+
+function loadFileHidden(){
+    isPopupOpen = false;
+    _load_filed.style.display = "none";
+    isLoadFileView = false;
+}
