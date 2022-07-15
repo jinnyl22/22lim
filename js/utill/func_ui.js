@@ -34,19 +34,6 @@ function inventoryView(name){
 
 }
 
-
-function saveFileView(){
-    isPopupOpen = true;
-    _save_filed.style.display = "flex";
-    isSaveFileView = true;
-}
-
-function saveFileHidden(){
-    isPopupOpen = false;
-    _save_filed.style.display = "none";
-    isSaveFileView = false;
-}
-
 function inventoryHidden(){
     isPopupOpen = false;
     _inventory.style.display = "none";
@@ -123,4 +110,26 @@ function paragraph(element) {
 
 function chageMap(){
     
+}
+function saveFileView(){
+    isPopupOpen = true;
+    _save_filed.style.display = "flex";
+    isSaveFileView = true;
+}
+
+function saveFileHidden(){
+    isPopupOpen = false;
+    _save_filed.style.display = "none";
+    isSaveFileView = false;
+}
+function loadFileView(){
+    isPopupOpen = true;
+    _load_filed.style.display = "flex";
+    isLoadFileView = true;
+}
+
+function loadFileHidden(){
+    isPopupOpen = false;
+    _load_filed.style.display = "none";
+    isLoadFileView = false;
 }
