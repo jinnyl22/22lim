@@ -13,6 +13,14 @@
 
 <br/>
 
+## 📍개발 환경
+
+- JavaScript
+- HTML
+- CSS
+
+<br/>
+
 ## 🔗 Link
 
 **Team Github** [https://github.com/jinnyl22/22lim](https://github.com/jinnyl22/22lim)
